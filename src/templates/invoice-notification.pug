@@ -1,27 +1,40 @@
-p 您好，
-
-p 以下訂單已完成，請於 3 個工作日內開立發票：
-
-table(cellpadding="6" cellspacing="0" style="border:1px solid #ddd;font-family:Arial,sans-serif;font-size:13px;")
-  tr
-    td
-      strong 客戶名稱
-    td {{record.fields.Customer}}
-  tr
-    td
-      strong 訂單編號
-    td {{record.fields["Order No."]}}
-  tr
-    td
-      strong 完成日期
-    td {{record.fields["Completion Date"]}}
-  tr
-    td
-      strong 訂單金額
-    td NT$ {{record.fields.Subtotal}}
-
-p 請完成後更新狀態至 
-  strong Invoice Issued
-  | 。
-
-p(style="color:#888;font-size:12px;") 若有疑問，請聯繫財務部。
+div(style="width:100%;background-color:#f5f5f5;padding:20px 0;font-family:Arial,sans-serif;")
+  div(style="max-width:600px;margin:0 auto;background-color:#ffffff;padding:30px;text-align:center;")
+    
+    // LOGO 區域
+    div(style="text-align:center;margin-bottom:25px;")
+      div(style="font-size:28px;font-weight:bold;color:#4A90E2;padding:15px;border:2px solid #4A90E2;border-radius:8px;display:inline-block;")
+        | 🏥 TailorMed 🏥
+    
+    // 問候語
+    div(style="color:#333333;font-size:16px;line-height:1.6;margin-bottom:25px;")
+      | 您好，
+      br
+      br
+      | 以下訂單已完成，請於 3 個工作日內開立發票：
+    
+    // 訂單資訊表格
+    div(style="margin:25px 0;")
+      table(style="width:100%;border:1px solid #cccccc;border-collapse:collapse;margin:0 auto;")
+        tr
+          td(style="border:1px solid #cccccc;background-color:#f9f9f9;font-weight:bold;color:#333333;font-size:14px;padding:12px;text-align:left;") 客戶名稱
+          td(style="border:1px solid #cccccc;color:#333333;font-size:14px;padding:12px;text-align:left;") {{record.fields.Customer}}
+        tr
+          td(style="border:1px solid #cccccc;background-color:#f9f9f9;font-weight:bold;color:#333333;font-size:14px;padding:12px;text-align:left;") 訂單編號
+          td(style="border:1px solid #cccccc;color:#333333;font-size:14px;padding:12px;text-align:left;") {{record.fields["Order No."]}}
+        tr
+          td(style="border:1px solid #cccccc;background-color:#f9f9f9;font-weight:bold;color:#333333;font-size:14px;padding:12px;text-align:left;") 完成日期
+          td(style="border:1px solid #cccccc;color:#333333;font-size:14px;padding:12px;text-align:left;") {{record.fields["Completion Date"]}}
+        tr
+          td(style="border:1px solid #cccccc;background-color:#f9f9f9;font-weight:bold;color:#333333;font-size:14px;padding:12px;text-align:left;") 訂單金額
+          td(style="border:1px solid #cccccc;color:#333333;font-size:14px;padding:12px;text-align:left;") NT$ {{record.fields.Subtotal}}
+    
+    // 後續指示
+    div(style="color:#333333;font-size:16px;line-height:1.6;margin:25px 0;")
+      | 請完成後更新狀態至 
+      strong(style="color:#333333;") Invoice Issued
+      | 。
+    
+    // 聯絡資訊
+    div(style="color:#888888;font-size:13px;margin-top:25px;")
+      | 若有疑問，請聯繫財務部。
