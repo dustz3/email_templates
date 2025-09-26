@@ -1,0 +1,27 @@
+p 您好，
+
+p 以下訂單已完成，請於 3 個工作日內開立發票：
+
+table(cellpadding="6" cellspacing="0" style="border:1px solid #ddd;font-family:Arial,sans-serif;font-size:13px;")
+  tr
+    td
+      strong 客戶名稱
+    td {{record.fields.Customer}}
+  tr
+    td
+      strong 訂單編號
+    td {{record.fields["Order No."]}}
+  tr
+    td
+      strong 完成日期
+    td {{record.fields["Completion Date"]}}
+  tr
+    td
+      strong 訂單金額
+    td NT$ {{record.fields.Subtotal}}
+
+p 請完成後更新狀態至 
+  strong Invoice Issued
+  | 。
+
+p(style="color:#888;font-size:12px;") 若有疑問，請聯繫財務部。
